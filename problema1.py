@@ -11,4 +11,14 @@
 #         ('mundo', 44, 20, 90, 'hola', 'mundo', 44)
 t = tuple(input().split())
 m = tuple(input().split())
-print(m + t + m)
+r = m + t + m
+tupla = []
+
+for i in r:
+  try:
+    tupla.append(int(i))
+  except ValueError: 
+    tupla.append(i)
+    continue
+
+print(tuple(tupla))
