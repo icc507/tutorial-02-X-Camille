@@ -14,7 +14,7 @@ t = tuple((input().split()))
 def arbolTrinario(numero):
     return [numero, [], [], []] # Se define un árbol trinario, considerando  los elementos iguales.
 
-def insertaEnArbolTrinario(arbol, numero): # Función que se carga de insertar el número en el árbol trinario.
+def insertaEnArbolTrinario(arbol, numero): # Función que se encarga de insertar el número en el árbol trinario.
     if arbol == []: # Si el árbol está vacío, se agrega la estructura básica de un árbol trinario.
         arbol += arbolTrinario(numero)
     elif numero < arbol[0]: # Si es menor se agrega a la izquierda.
@@ -24,8 +24,11 @@ def insertaEnArbolTrinario(arbol, numero): # Función que se carga de insertar e
     else: # Si es mayor, se agrega a la derecha.
         insertaEnArbolTrinario(arbol[3], numero)
 
-arbol_trinario = arbolTrinario(int(t[0]))
-if len(t) > 1: # Verifica si se ingresó al menos un número
-    for i in t:
-        insertaEnArbolTrinario(arbol_trinario, int(i))
-print(arbol_trinario)
+if len(t) > 0: # Verifica si se ingresó al menos un número.
+    arbol_trinario = arbolTrinario(int(t[0]))
+    if len(t) > 1: # Verifica si hay más de un número en la tupla.
+        for i in t[1:]:
+            insertaEnArbolTrinario(arbol_trinario, int(i))
+    print(arbol_trinario)
+else:
+    print([])
