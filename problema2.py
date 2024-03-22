@@ -8,4 +8,12 @@
 #La salida debe ser
 #         (77, 'jiji', 'hola', 90, 20)
 t = tuple(input().split())
-print(tuple(reversed(t)))
+t_reversa = tuple(reversed(t))
+output = []
+for i in t_reversa:
+  try:
+    output.append(int(i))
+  except ValueError: 
+    output.append(i)
+    continue
+print(tuple(output))
