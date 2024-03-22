@@ -25,6 +25,7 @@ def insertaEnArbolTrinario(arbol, numero): # Función que se carga de insertar e
         insertaEnArbolTrinario(arbol[3], numero)
 
 arbol_trinario = arbolTrinario(int(t[0]))
-for i in t:
-  insertaEnArbolTrinario(arbol_trinario, int(i))
+if len(t) > 1: # Verifica si se ingresó al menos un número
+    for i in t:
+        insertaEnArbolTrinario(arbol_trinario, int(i))
 print(arbol_trinario)
